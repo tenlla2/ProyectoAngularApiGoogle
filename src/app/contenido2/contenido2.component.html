@@ -1,0 +1,15 @@
+<div class="h2 mt-5 ">Solo libros</div>
+<div class="container-fluid"  *ngIf="libros">
+  <div *ngFor="let libro of libros" class="row">
+    <div *ngFor="let item of libro.items" class="col-lg-3 col-12">
+      <div class="card mt-5 mb-5" style="max-height: 400px" routerLink='/vista/{{item.id}}'>
+        <img class="card-img-top img-fluid" src="{{item.volumeInfo.imageLinks.smallThumbnail}}"
+        alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.volumeInfo.title}}</h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

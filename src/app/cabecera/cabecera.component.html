@@ -1,0 +1,43 @@
+<ng-container *ngIf="modo; else elseTemplate">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T5jhQKMh96HMkXwqVMSjF3CmLcL1nT9//tCqu9By5XSdj7CwR0r+F3LTzUdfkkQf" crossorigin="anonymous">
+</ng-container>
+<ng-template #elseTemplate>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-mtS696VnV9qeIoC8w/PrPoRzJ5gwydRVn0oQ9b+RJOPxE1Z1jXuuJcyeNxvNZhdx" crossorigin="anonymous">
+</ng-template>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand disabled"><div class="h1">LIBOOKST</div></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <div class="nav-link text-center">
+          <a routerLink='/'>Home</a>
+        </div>
+      </li>
+      <li class="nav-item dropright">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Estilos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)="modo=true;">Blanco</a>
+          <a class="dropdown-item" (click)="modo=false;">Negro</a>
+        </div>
+      </li>
+    </ul>
+    <div class="dropdown dropleft ">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Categorías
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item"  routerLink='/all'>Todos los libros</a>
+        <a class="dropdown-item"  routerLink='/books'>Libros</a>
+        <a class="dropdown-item"  routerLink='/magazines'>Revistas</a>
+      </div>
+    </div>
+  </div>
+</nav>

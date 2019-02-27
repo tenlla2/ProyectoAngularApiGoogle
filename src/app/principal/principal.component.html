@@ -1,0 +1,31 @@
+<div class="h2 mt-5 mb-3">Publicados más recientemente</div>
+<div class="container-fluid"  *ngIf="recientes">
+  <div *ngFor="let libro of recientes" class="row">
+    <div *ngFor="let item of libro.items" class="col-lg-3 col-12">
+      <div class="card mt-5 " style="max-height: 400px" routerLink='/vista/{{item.id}}'>
+        <img class="card-img-top img-fluid" src="{{item.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.volumeInfo.title}}</h5>
+          <p> {{item.volumeInfo.description | truncate:50}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="h2 mt-5 mb-5">Más relevantes</div>
+<div class="container-fluid"  *ngIf="relevantes">
+  <div *ngFor="let libro of relevantes" class="row">
+    <div *ngFor="let item of libro.items" class="col-lg-3 col-12">
+      <div class="card mb-5 "style="max-height: 400px" routerLink='/vista/{{item.id}}'>
+        <img class="card-img-top img-fluid" src="{{item.volumeInfo.imageLinks.smallThumbnail}}"
+        alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.volumeInfo.title}}</h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
